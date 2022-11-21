@@ -1,5 +1,9 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 .navbar {
-    border-bottom: #e600e6 solid 5px;
+    border-bottom: #e600e6 solid 3px;
 }
 
 .navbar-brand {
