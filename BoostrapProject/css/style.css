@@ -1,0 +1,24 @@
+.navbar {
+    border-bottom: #e600e6 solid 5px;
+}
+
+.navbar-brand {
+    /* when we want to make changes on boostrap class we must look wich class is used before (.navbar ) and write it first*/
+    color: #e600e6 !important;
+    /* or write !iportant*/
+    font-size: 24px;
+}
+
+.nav-link {
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: #e600e6 !important;
+}
+
+#header{
+    background: url('../images/header-bg.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
