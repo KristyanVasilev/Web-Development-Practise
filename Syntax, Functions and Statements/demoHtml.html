@@ -7,11 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Demo</h1>
+    <div #mapContainer style="height: 300px; width: 100%"></div>
     <script>
-        for (let i = 0; i < 10; i++) {
-            document.write(i);         
-        }
+      function initMap() {
+        const map = new google.maps.Map(document.getElementById('mapContainer'), {
+          center: { lat: 51.678418, lng: 7.809007 },
+          zoom: 8
+        });
+      }
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANhSHIX2d5SQfgztHhoI8sTVIWtYGsnKo"
+        async defer></script>
 </body>
 </html>
