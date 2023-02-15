@@ -40,6 +40,7 @@ function solve() {
         continueBtn = element.querySelector('.continue-btn').addEventListener('click', () => onContinue(element));
 
         infoList.appendChild(element);
+        nextBtn = document.getElementById('next-btn').disabled = true;
         resetInput();
 
         function edit(source) {
@@ -49,6 +50,7 @@ function solve() {
             dateOutInput.value = dateOut;
             peopleInput.value = people;
 
+            nextBtn = document.getElementById('next-btn').disabled = false;
             source.remove();
         }
 
@@ -74,14 +76,14 @@ function solve() {
         function confirm(source) {
             verification.textContent = 'Confirmed.'
             verification.className = 'reservation-confirmed';
-
+            nextBtn = document.getElementById('next-btn').disabled = false;
             source.remove();
         }
 
         function cancel(source) {
             verification.textContent = 'Cancelled.'
             verification.className = 'reservation-cancelled';
-
+            nextBtn = document.getElementById('next-btn').disabled = false;
             source.remove();
         }
     }
