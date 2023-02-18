@@ -1,0 +1,23 @@
+{
+  "name": "03.-find-apartment_resources",
+  "version": "1.0.0",
+  "description": "",
+  "main": "findApartment.js",
+  "dependencies": {
+    "assertion-error": "^1.1.0",
+    "chai": "^4.3.7",
+    "check-error": "^1.0.2",
+    "get-func-name": "^2.0.0",
+    "deep-eql": "^4.1.3",
+    "pathval": "^1.1.1",
+    "loupe": "^2.3.6",
+    "type-detect": "^4.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
