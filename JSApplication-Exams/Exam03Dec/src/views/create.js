@@ -23,30 +23,36 @@ const createTemplate = (onCreate) => html`
 export function createPage(ctx) {
     ctx.render(createTemplate(createSubmitHandler(onCreate)));
 
-    async function onCreate({
-        singer,
-        album,
-        imageUrl,
-        release,
-        label,
-        sales,
-      }) {
-        const formData = {
+      async function onCreate(
+        {
           singer,
           album,
           imageUrl,
           release,
           label,
           sales,
-        };
-      
-        const nonEmptyFields = Object.entries(formData).filter(([_, value]) => value !== '');
-      
-        if (nonEmptyFields.length !== Object.keys(formData).length) {
-          return alert('All fields are required!');
+        }) {
+
+        if ([
+          singer,
+          album,
+          imageUrl,
+          release,
+          label,
+          sales,
+        ].some(f => f == '')) {
+            return alert('All fields are required!');
         }
-      
-        const result = await createAlbum(Object.fromEntries(nonEmptyFields));
+
+        const result = await createAlbum({
+          singer,
+          album,
+          imageUrl,
+          release,
+          label,
+          sales,
+        });
+
         ctx.page.redirect('/albums');
-      }
+    }
 }

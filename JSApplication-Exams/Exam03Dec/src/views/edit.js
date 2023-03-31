@@ -7,12 +7,12 @@ const editTemplate = (album, onEdit) => html`
 <div class="form">
   <h2>Edit Album</h2>
   <form class="edit-form" @submit=${onEdit}>
-    <input type="text" name="singer" id="album-singer" placeholder="${album.singer}" />
-    <input type="text" name="album" id="album-album" placeholder="${album.album}"" />
-    <input type="text" name="imageUrl" id="album-img" placeholder="${album.imageUrl}"" />
-    <input type="text" name="release" id="album-release" placeholder="${album.release}"" />
-    <input type="text" name="label" id="album-label" placeholder="${album.label}"" />
-    <input type="text" name="sales" id="album-sales" placeholder="${album.sales}"" />
+    <input type="text" name="singer" id="album-singer" value="${album.singer}" />
+    <input type="text" name="album" id="album-album" value="${album.album}"" />
+    <input type="text" name="imageUrl" id="album-img" value="${album.imageUrl}"" />
+    <input type="text" name="release" id="album-release" value="${album.release}"" />
+    <input type="text" name="label" id="album-label" value="${album.label}"" />
+    <input type="text" name="sales" id="album-sales" value="${album.sales}"" />
 
     <button type="submit">post</button>
   </form>
