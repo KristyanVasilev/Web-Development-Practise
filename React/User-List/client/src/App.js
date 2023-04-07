@@ -19,6 +19,35 @@ function App() {
             });
     }, []);
 
+    const onUserCreateSubmit = async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.currentTarget);
+
+        const data = Object.fromEntries(formData);
+
+        const createdUser = await userService.create(data);
+
+        setUsers(state => [...state, createdUser]);
+    }
+
+    const onUserEditSubmit = async (e, userId) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+
+        const data = Object.fromEntries(formData);
+
+        const updatedUser = await userService.userEdit(userId, data);
+
+        setUsers(state => state.map(x => x._id === userId ? updatedUser : x));
+    }
+
+    const onUserDelete = async (userId) => {
+        await userService.deleteUser(userId);
+
+        setUsers(state => state.filter(u => u._id !== userId));
+    }
+
     return (
         <>
             <Header />
@@ -27,9 +56,13 @@ function App() {
 
                     <Search />
 
-                    <UserList users={users}/>
+                    <UserList
+                        users={users}
+                        onUserCreateSubmit={onUserCreateSubmit}
+                        onUserDelete={onUserDelete}
+                        onUserEditSubmit={onUserEditSubmit}
+                    />
 
-                    <button className="btn-add btn">Add new user</button>
                 </section>
             </main>
             <Footer />
