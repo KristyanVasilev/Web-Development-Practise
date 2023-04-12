@@ -25,9 +25,23 @@ export const gameServiceFactory = (accessToken) => {
         return result;
     };
 
+    const editGame = async (gameId, data) => {
+        const result = await request.put(`${endPoints.baseUrl}/${gameId}`, data);
+
+        return result;
+    };
+
+    const deleteGame = async (gameId) => {
+        const result = await request.del(`${endPoints.baseUrl}/${gameId}`);
+
+        return result;
+    };
+
     return {
         getAllGames,
         getGameById,
         createGame,
+        deleteGame,
+        editGame
     }
 }
