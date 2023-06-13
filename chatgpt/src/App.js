@@ -7,7 +7,7 @@ import { Blog, Features, Footer, Header, Possibility, WhatGPT3 } from "./contain
 function App() {
   return (
     <div className="App">
-      <div className="gradient_bg">
+      <div className="gradient__bg">
         <Navbar />
         <Header />
       </div>
